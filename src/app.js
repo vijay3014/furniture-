@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
-const colors = require('colors');
 
 const Admin = require('./routes/admin/admin.routes');
 const User = require('./routes/user/user.routes');
@@ -30,19 +29,9 @@ app.use('/api/user/cart',Cart);
 app.use('/api/user/cart/order',Order);
 
 
-// app.listen(port, () => {
-//     mongoose.connect(dbUrl)
-//         .then(console.log("Database connected"))
-//         .catch(err => console.log(err));
-//     console.log("Server is start....".rainbow);
-// });
-
-// const adminRoutes = require('./routes/admin/index.routes');
-// app.use('/api/admin', adminRoutes)
-
 app.listen(port, async ()=> {
     mongoose.connect(process.env.MONGO_DB_URL)
-    .then(() =>console.log('DB is Connected'))
+    .then(() =>console.log('DB is Connected....'))
     .catch(err => console.log(err.message));
     console.log(`server is start at http://localhost:${port}`);
 });

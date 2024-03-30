@@ -6,7 +6,7 @@ module.exports = class cartServices {
             return await Cart.create(body);
         } catch (error) {
             console.log(error);
-            return res.json({ message: "Server Error from cart services" });
+            return res.json({ message: "Services error while adding in to cart" });
         }
     };
 
@@ -15,7 +15,7 @@ module.exports = class cartServices {
             return await Cart.findOne(body);
         } catch (error) {
             console.log(error);
-            return res.json({ message: "Server Error from cart services" });
+            return res.json({ message: "Services error while getting in to cart" });
         }
     };
 
@@ -24,7 +24,7 @@ module.exports = class cartServices {
             return await Cart.findById(id);
         } catch (error) {
             console.log(error);
-            return res.json({ message: "Server Error from cart services" });
+            return res.json({ message: "Services error while getting in to cart by ID" });
         }
     };
 
@@ -42,7 +42,7 @@ module.exports = class cartServices {
             return results;
         } catch (error) {
             console.log(error);
-            return res.json({ message: "Server Error from cart services" })
+            return res.json({ message: "Services error while getting in to all cart" })
         }
     };
 
@@ -51,7 +51,7 @@ module.exports = class cartServices {
             return await Cart.findByIdAndUpdate(id, { $set: body }, { new: true });
         } catch (error) {
             console.log(error);
-            return res.json({ message: "Server Error from cart services" })
+            return res.json({ message: "Services error while updeting in to cart" })
         }
     };
 
@@ -60,7 +60,7 @@ module.exports = class cartServices {
             return await Cart.updateMany({ user: user }, { $set: body }, { new: true });
         } catch (error) {
             console.log(error);
-            return res.json({ message: "Ineternal Server Error from cart Service" });
+            return res.json({ message: "Services error while updeting in to many cart" });
         }
     };
 };

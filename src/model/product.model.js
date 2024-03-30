@@ -6,10 +6,10 @@ const productSchema = mongoose.Schema({
         unique : true,
         required : true
     },
-    productImage: {
-        type : String,
-        required : true
-    },
+    // productImage: {
+    //     type : String,
+    //     required : true
+    // },
     productPrice: {
         type: Number,
         required : true
